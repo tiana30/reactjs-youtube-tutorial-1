@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
 import * as serviceWorker from './serviceWorker';
-import StatelessComponent from './components/HelloComponent';
-//import StatefullComponent from './container/StatefullComponent';
-import './components/HelloComponent.css';
+import Home from './containers/Home/Home';
 
 ReactDOM.render(
-    <StatelessComponent />,
+    <Home />,
   document.getElementById('root')
 );
 
