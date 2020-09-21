@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import StatelessComponent from './components/HelloComponent';
+//import StatefullComponent from './container/StatefullComponent';
+import './components/HelloComponent.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <StatelessComponent />,
   document.getElementById('root')
 );
 
