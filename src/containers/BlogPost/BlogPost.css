@@ -1,0 +1,53 @@
+.section-header {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-top: 0px;
+    color: black;
+}
+
+.post-wrapper {
+    display: flex;
+    width: 400px;
+    height: 240px;
+    box-sizing: border-box;
+    margin-left: 12px;
+    padding: 1em;
+    background-color: wheat;
+    border: 3px solid white;
+}
+
+.img-thumb {
+    width: 100%;
+    position: relative;
+    flex:1;
+    margin-right: 2em;
+}
+
+.img-thumb img {
+    width: 100%;
+}
+
+.content{
+    width: 100%;
+    position: relative;
+    flex:2;
+}
+
+p.title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-top: 0px;
+    color: black;
+
+}
+
+p.desc {
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: none;
+    margin-top: 0px;
+    color: chocolate;
+
+}
