@@ -16,7 +16,7 @@ class BlogPost extends Component {
         //    })
         //    )
 
-        Axios.get('https://jsonplaceholder.typicode.com/posts')
+        Axios.get('http://localhost:3004/posts')
         .then((result) => 
         {
            // console.log(result.data);
@@ -28,7 +28,7 @@ class BlogPost extends Component {
     render() {
         return(
             <Fragment>
-                <p className="section-title">Blog Post</p>
+                <p className="section-header">Blog Post</p>
                 {
                     this.state.post.map(post => {
                         return  (
