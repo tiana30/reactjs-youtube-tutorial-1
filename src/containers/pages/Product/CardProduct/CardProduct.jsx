@@ -32,7 +32,8 @@ class CardProduct extends Component {
 
 render() {
     return (
-        <div className="card">
+        <Fragment>
+            <div className="card">
         <div className="img-thumb-prod">
             <img alt="poto" src="https://etanee-images.s3-ap-southeast-1.amazonaws.com/product/ayam/Ayam+Utuh+0405kg.jpg"></img>
         </div>
@@ -44,6 +45,7 @@ render() {
         <button className="plus" onClick={this.handlePlus}>+</button>
         </div>
     </div>
+        </Fragment>
     )
 }
 

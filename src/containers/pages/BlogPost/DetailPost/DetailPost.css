@@ -1,0 +1,23 @@
+.detail{
+    width: 100%;
+    position: relative;
+    flex:2;
+}
+
+.detail-title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-top: 0px;
+    color: black;
+
+}
+
+.detail-body {
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: none;
+    margin-top: 0px;
+    color: chocolate;
+
+}

@@ -5,6 +5,7 @@ import YoutubePage from '../pages/YoutubeComp/YoutubePage';
 import Product from '../pages/Product/Product';
 import LifeCycleComp from '../pages/LifeCycleComp/LifecycleComp';
 import BlogPost from '../pages/BlogPost/BlogPost';
+import DetailPost from '../pages/BlogPost/DetailPost/DetailPost';
 class Home extends Component {
     state = {
         showComponent: true
@@ -31,7 +32,8 @@ class Home extends Component {
             </div>
 
             <Route exact path="/" component={BlogPost}/>
-            <Route path="/youtube" component={YoutubePage}/>
+            <Route path="/detail-post/:id" component={DetailPost} />
+            <Route path="/youtube" component={YoutubePage} />
             <Route path="/product" component={Product}/>
             <Route path="/lifecycle" component={LifeCycleComp}/>
             </div>
