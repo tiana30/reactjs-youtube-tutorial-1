@@ -65,6 +65,19 @@
     cursor:pointer;
 }
 
+.content .update {
+    padding: 12px 18px;
+    background: darkolivegreen;
+    color: white;
+    border-radius: 4px;
+    outline: none;
+
+}
+
+.content .update:hover {
+    cursor:pointer;
+}
+
 .form-add-post {
     box-shadow: 0px 0px 16px;
     width: 500px;
@@ -95,7 +108,7 @@
 
 }
 
-button.btn-submit {
+.btn-submit {
     outline: none;
     border: 1px solid #2196F3;
     padding: 10px 30px;
@@ -104,4 +117,7 @@ button.btn-submit {
     text-transform: uppercase;
     font-weight: bold;
     margin-top: 30px;
+}
+ .btn-submit:hover {
+    cursor:pointer;
 }
