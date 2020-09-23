@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import './Home.css';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import YoutubeComp from '../../components/YoutubeComp/YoutubeComp';
-import Product from '../../containers/Product/Product';
-import LifeCycleComp from '../../containers/LifeCycleComp/LifecycleComp';
-import BlogPost from '../../containers/BlogPost/BlogPost';
+import YoutubePage from '../pages/YoutubeComp/YoutubePage';
+import Product from '../pages/Product/Product';
+import LifeCycleComp from '../pages/LifeCycleComp/LifecycleComp';
+import BlogPost from '../pages/BlogPost/BlogPost';
 class Home extends Component {
     state = {
         showComponent: true
@@ -22,19 +22,19 @@ class Home extends Component {
     render() {
         return (
            <Router>
-    <div>
-    <div className="navigation">
-    <Link to="/"> BlogPost </Link>
-    <Link to="/youtube"> Youtube</Link>
-    <Link to="/product" > Product</Link>
-    <Link to="/lifecycle" > Lifecycle</Link>
-    </div>
-    
-    <Route exact path="/" component={BlogPost}/>
-    <Route path="/youtube" component={YoutubeComp}/>
-    <Route path="/product" component={Product}/>
-    <Route path="/lifecycle" component={LifeCycleComp}/>
-    </div>
+            <div className="wrapper">
+            <div className="navigation">
+            <Link to="/"> BlogPost </Link>
+            <Link to="/youtube"> Youtube</Link>
+            <Link to="/product" > Product</Link>
+            <Link to="/lifecycle" > Lifecycle</Link>
+            </div>
+
+            <Route exact path="/" component={BlogPost}/>
+            <Route path="/youtube" component={YoutubePage}/>
+            <Route path="/product" component={Product}/>
+            <Route path="/lifecycle" component={LifeCycleComp}/>
+            </div>
            </Router>
         )
     }
