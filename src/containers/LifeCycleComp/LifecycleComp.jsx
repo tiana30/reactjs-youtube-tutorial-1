@@ -30,8 +30,12 @@ class LifeCycleComp extends Component {
     render(){
         console.log('render');
         return(
-            <button className="btn"> Component Button </button>
-        )
+           <div>
+           <hr />
+                <p>Lifecycle Component</p>
+            <hr />
+                <button className="btn"> Component Button </button>
+           </div>  )
     }
 }
 
