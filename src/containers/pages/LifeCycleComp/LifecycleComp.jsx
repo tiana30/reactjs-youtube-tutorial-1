@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './LifeCycleComp.css';
+import {connect} from 'react-redux';
+
 class LifeCycleComp extends Component {
    
     static getDerivedStateFromProps(props, state){
@@ -35,8 +37,15 @@ class LifeCycleComp extends Component {
                 <p>Lifecycle Component</p>
             <hr />
                 <button className="btn"> Component Button </button>
+                <p>Total Order : {this.props.order}</p>
            </div>  )
     }
 }
 
-export default LifeCycleComp;
+const mapStateToProps = (state) => {
+    return {
+        order: state.totalOrder
+    }
+}
+
+export default connect(mapStateToProps)(LifeCycleComp);
