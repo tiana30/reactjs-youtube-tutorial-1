@@ -4,9 +4,31 @@ import './index.css';
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Home from './containers/Home/Home';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+
+
+//Init State
+const globalState = {
+  totalOrder: 0
+}
+
+
+//Reducer
+const AppReducer = (state = globalState, action) => {
+  switch(action.type){
+    default:
+      return state;
+  }
+}  
+
+
+//Store
+const store = createStore(AppReducer);
+console.log(store.getState());
 
 ReactDOM.render(
-    <Home />,
+    <Provider store={store}><Home /></Provider>,
   document.getElementById('root')
 );
 
