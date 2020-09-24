@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './LifeCycleComp.css';
-import {connect} from 'react-redux';
+//import {connect} from 'react-redux';
+import {RootContext} from '../../Home/Home';
 
 class LifeCycleComp extends Component {
    
@@ -32,20 +33,29 @@ class LifeCycleComp extends Component {
     render(){
         console.log('render');
         return(
+            <RootContext.Consumer>
+            {
+                (value) => {
+                    return(
            <div>
            <hr />
                 <p>Lifecycle Component</p>
             <hr />
                 <button className="btn"> Component Button </button>
-                <p>Total Order : {this.props.order}</p>
+                <p>Total Order : {value.state.totalOrder}</p>
            </div>  )
+                }
+            }
+            </RootContext.Consumer>
+        )
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        order: state.totalOrder
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         order: state.totalOrder
+//     }
+// }
 
-export default connect(mapStateToProps)(LifeCycleComp);
+//export default connect(mapStateToProps)(LifeCycleComp);
+export default LifeCycleComp;
