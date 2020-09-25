@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import './Hooks.css';
 
 // class Hooks extends Component {
@@ -11,6 +11,16 @@ import './Hooks.css';
 //             count: this.state.count+1
 //         })
 //     }
+//      componentDidMount(){
+//   document.title = `Title Change: ${this.state.count}`
+//}
+//componentDidUpdate(){
+    //   document.title = `Title Change: ${this.state.count}`
+    //}
+//ComponentWillUnmount(){
+//   document.title = `React Js `
+//}
+
 //     render(){
 //         return(
 //             <div>
@@ -23,6 +33,13 @@ import './Hooks.css';
 
 const Hooks = () => {
     const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        document.title= `Title Change: ${count}`;
+        return () => {
+            document.title = `React Js `;
+        }
+    })
 
     return(
         <div>
