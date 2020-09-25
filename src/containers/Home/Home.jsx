@@ -7,7 +7,7 @@ import LifeCycleComp from '../pages/LifeCycleComp/LifecycleComp';
 import BlogPost from '../pages/BlogPost/BlogPost';
 import DetailPost from '../pages/BlogPost/DetailPost/DetailPost';
 import {GlobalProvider} from '../../context/context';
-
+import Hooks from '../pages/Hooks/Hooks';
 
 class Home extends Component {
      render() {
@@ -20,6 +20,7 @@ class Home extends Component {
             <Link to="/youtube"> Youtube</Link>
             <Link to="/product" > Product</Link>
             <Link to="/lifecycle" > Lifecycle</Link>
+            <Link to="/hooks" > Hooks</Link>
             </div>
 
             <Route exact path="/" component={BlogPost}/>
@@ -27,6 +28,7 @@ class Home extends Component {
             <Route path="/youtube" component={YoutubePage} />
             <Route path="/product" component={Product}/>
             <Route path="/lifecycle" component={LifeCycleComp}/>
+            <Route path="/hooks" component={Hooks}/>
             </div>
            </Router>
         )
