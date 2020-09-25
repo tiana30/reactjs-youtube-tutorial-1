@@ -31,7 +31,7 @@ class BlogPost extends Component {
     }
 
     postDatatoApi = () => {
-        Axios.post(`http://localhost:3004/posts/`, this.state.formBlogPost)
+        API.postNewsBlog(this.state.formBlogPost)  
         .then((res) => {
             console.log(res);
             this.getPostApi();
@@ -50,20 +50,20 @@ class BlogPost extends Component {
     }
 
     putDataToApi = () => {
-        Axios.put(`http://localhost:3004/posts/${this.state.formBlogPost.id}`, this.state.formBlogPost)
-        .then((result) => {
-            console.log(result);
-            this.getPostApi();
-            this.setState({
-                isUpdate: false,
-                formBlogPost: {
-                    userId: 1,
-                    id: '',
-                    title: '',
-                    body: ''
-                }
-            })
+        API.updateNewsBlog(this.state.formBlogPost)
+        .then((result)=> {
+        this.getPostApi();
+        this.setState({
+            isUpdate: false,
+            formBlogPost: {
+                userId: 1,
+                id: '',
+                title: '',
+                body: ''
+            }
         })
+    })
+      
     }
 
     handleRemove = (data)  => {
@@ -145,9 +145,9 @@ class BlogPost extends Component {
                     onChange={this.handleFormChange}></textarea>
                     <button className="btn-submit" onClick={this.handleSubmit}>Simpan</button>
                 </div>
-                {this.state.comments.map (comment => {
+                {/* {this.state.comments.map (comment => {
                     return <p>{comment.name} = {comment.email}</p>
-                })}
+                })} */}
 
                 {
                     this.state.post.map(post => {
