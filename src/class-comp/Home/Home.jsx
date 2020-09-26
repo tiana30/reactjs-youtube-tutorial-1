@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import './Home.css';
 //import YoutubeComp from '../../function-comp/YoutubeComp';
 //import Product from '../Product';
-import LifeCycleComp from '../LifeCycle/LifeCycleComp';
+//import LifeCycleComp from '../LifeCycle/LifeCycleComp';
+import BlogPost from '../BlogPost/BlogPost';
 
 class Home extends Component {
     state = {
@@ -22,7 +23,7 @@ class Home extends Component {
         return(
             <div className="container">
                 <hr />
-                <h2> Product Component </h2>
+                <h2> Blog Post Component </h2>
                 <hr />
                 {/* <YoutubeComp />
                 <YoutubeComp time="7.12" title="ABCDEFGHIJK" desc="Mau Apa Aja" />
@@ -33,10 +34,12 @@ class Home extends Component {
 
                 {/* <Product /> */}
 
-                {
+                {/* {
                     this.state.showComponent ?
                     <LifeCycleComp /> : null
-                }
+                } */}
+
+                <BlogPost />
                 
             </div>
         )
