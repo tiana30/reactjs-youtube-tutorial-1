@@ -17,7 +17,14 @@ class BlogPost extends Component {
         //     })
         // )
 
-        Axios.get('https://jsonplaceholder.typicode.com/posts')
+
+        //install json-server yarn add json-server
+        //buat file baru di root dengan nama db.json
+        //isi db.json dengan data posts yang ada di jsonplaceholder.typicode.com/posts
+        //Buka dahulu json server dengan cara buka terminal baru di folder app
+        //kemudian jalankan perintah json-server --watch db.json --port 3004
+
+        Axios.get('http://localhost:3004/posts')
         .then((result) => 
         {
            // console.log(result.data);
@@ -30,7 +37,7 @@ class BlogPost extends Component {
     render(){
         return(
             <Fragment>
-               <p className="section-title">Blog Post</p>
+               <p className="section-header">Blog Post</p>
                 {
                     this.state.post.map(post => {
                         return  (
