@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import StatefullComp from './class-comp/StatefullComp';
+import HelloComp from './function-comp/HelloComp';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+   <HelloComp />
+   <hr />
+   <StatefullComp />
   </React.StrictMode>,
   document.getElementById('root')
 );
