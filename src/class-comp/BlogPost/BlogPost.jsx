@@ -8,6 +8,27 @@ class BlogPost extends Component {
         post: []
     }
 
+    getPostApi = () => {
+        Axios.get('http://localhost:3004/posts')
+        .then((result) => 
+        {
+           // console.log(result.data);
+            this.setState({
+                post: result.data
+            })
+        })    
+    }
+    
+    handleRemove = (data) => {
+        console.log(data);
+        Axios.delete(`http://localhost:3004/posts/${data}`)
+        .then((result) => 
+        {
+            console.log(result);
+            this.getPostApi();
+        })
+    }
+
     componentDidMount(){
         // fetch('https://jsonplaceholder.typicode.com/posts')
         // .then(response => response.json())
@@ -23,17 +44,12 @@ class BlogPost extends Component {
         //isi db.json dengan data posts yang ada di jsonplaceholder.typicode.com/posts
         //Buka dahulu json server dengan cara buka terminal baru di folder app
         //kemudian jalankan perintah json-server --watch db.json --port 3004
-
-        Axios.get('http://localhost:3004/posts')
-        .then((result) => 
-        {
-           // console.log(result.data);
-            this.setState({
-                post: result.data
-            })
-        })    
+        
+        this.getPostApi();
+        
     }
 
+   
     render(){
         return(
             <Fragment>
@@ -41,7 +57,10 @@ class BlogPost extends Component {
                 {
                     this.state.post.map(post => {
                         return  (
-                        <Post key={post.id} title={post.title} desc={post.body} />
+                        <Post key={post.id} 
+                        data = {post} //title dan body sudah dibungkus dengan props bernama data
+                        OnRemove = {this.handleRemove}
+                        />
                         )
                     })
                 } 
