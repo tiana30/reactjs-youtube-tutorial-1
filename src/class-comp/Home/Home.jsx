@@ -1,10 +1,23 @@
 import React, {Component} from 'react';
 import './Home.css';
-import YoutubeComp from '../../function-comp/YoutubeComp';
+//import YoutubeComp from '../../function-comp/YoutubeComp';
 //import Product from '../Product';
 import LifeCycleComp from '../LifeCycle/LifeCycleComp';
 
 class Home extends Component {
+    state = {
+        showComponent: true
+    }
+
+    componentDidMount(){
+        // setTimeout(() => {
+        //     this.setState({
+        //                 showComponent: false
+        //             })
+        // }, 5000)
+       
+    }
+
     render(){
         return(
             <div className="container">
@@ -19,7 +32,12 @@ class Home extends Component {
                 <YoutubeComp /> */}
 
                 {/* <Product /> */}
-                <LifeCycleComp />
+
+                {
+                    this.state.showComponent ?
+                    <LifeCycleComp /> : null
+                }
+                
             </div>
         )
     }
