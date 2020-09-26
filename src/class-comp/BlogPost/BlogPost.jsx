@@ -5,7 +5,13 @@ import Axios from 'axios';
 
 class BlogPost extends Component {
     state ={
-        post: []
+        post: [],
+        formPost: {
+            userId: 1,
+            id:1,
+            title:'',
+            body: ''
+        }
     }
 
     getPostApi = () => {
@@ -17,6 +23,17 @@ class BlogPost extends Component {
                 post: result.data
             })
         })    
+    }
+
+    handleFormChange = (event) => {
+        console.log('form change', event.target.value);
+        let formPostNew = [event.target.name] = event.target.value;
+
+        this.setState({
+            formPost: formPostNew
+        }, () => {
+            console.log('value object : ', this.state.formPost)
+        })
     }
     
     handleRemove = (data) => {
@@ -54,6 +71,14 @@ class BlogPost extends Component {
         return(
             <Fragment>
                <p className="section-header">Blog Post</p>
+               <div className="form-add-post">
+                    <label htmlFor="title">Title</label>
+                    <input type="text" name="title" placeholder="add title" onChange={this.handleFormChange} />
+                    <label htmlFor="body">Blog Content</label>
+                    <textarea name="body" id="body" cols="30" placeholder="add content" rows="10" onChange={this.handleFormChange}></textarea>
+                    <button className="btn-submit">Simpan</button>
+                </div>
+
                 {
                     this.state.post.map(post => {
                         return  (
