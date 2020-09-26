@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
 import * as serviceWorker from './serviceWorker';
-import StatefullComp from './class-comp/StatefullComp';
-import HelloComp from './function-comp/HelloComp';
+// import StatefullComp from './class-comp/StatefullComp';
+// import HelloComp from './function-comp/HelloComp';
+import Home from './class-comp/Home/Home';
 
 
 ReactDOM.render(
   <React.StrictMode>
-   <HelloComp />
-   <hr />
-   <StatefullComp />
+   <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
