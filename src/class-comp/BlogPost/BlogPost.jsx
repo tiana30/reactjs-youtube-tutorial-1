@@ -15,7 +15,7 @@ class BlogPost extends Component {
     }
 
     getPostApi = () => {
-        Axios.get('http://localhost:3004/posts')
+        Axios.get('http://localhost:3004/posts?_sort=id&_order=desc')
         .then((result) => 
         {
            // console.log(result.data);
@@ -25,10 +25,22 @@ class BlogPost extends Component {
         })    
     }
 
+    postDataToApi = () => {
+        Axios.post(`http://localhost:3004/posts/`, this.state.formPost)
+        .then((result) =>{
+            console.log(result);
+            this.getPostApi();
+        }, (err) => {
+            console.log("error : ", err)
+        })
+    }
+
     handleFormChange = (event) => {
         console.log('form change', event.target.value);
-        let formPostNew = [event.target.name] = event.target.value;
-
+        let formPostNew ={...this.state.formPost}
+        let timestamp = new Date().getTime();
+        formPostNew['id'] = timestamp; //id di isi dengan 
+        formPostNew[event.target.name] = event.target.value; //
         this.setState({
             formPost: formPostNew
         }, () => {
@@ -37,13 +49,17 @@ class BlogPost extends Component {
     }
     
     handleRemove = (data) => {
-        console.log(data);
+        console.log(data); //data berisi id yang dikirimkan
         Axios.delete(`http://localhost:3004/posts/${data}`)
         .then((result) => 
         {
             console.log(result);
             this.getPostApi();
         })
+    }
+
+    handleSubmit = () => {
+        this.postDataToApi(); //memanggil fungsi
     }
 
     componentDidMount(){
@@ -62,7 +78,7 @@ class BlogPost extends Component {
         //Buka dahulu json server dengan cara buka terminal baru di folder app
         //kemudian jalankan perintah json-server --watch db.json --port 3004
         
-        this.getPostApi();
+        this.getPostApi(); //memanggil get data ketika pertama loading
         
     }
 
@@ -76,7 +92,7 @@ class BlogPost extends Component {
                     <input type="text" name="title" placeholder="add title" onChange={this.handleFormChange} />
                     <label htmlFor="body">Blog Content</label>
                     <textarea name="body" id="body" cols="30" placeholder="add content" rows="10" onChange={this.handleFormChange}></textarea>
-                    <button className="btn-submit">Simpan</button>
+                    <button className="btn-submit" onClick = {this.handleSubmit}>Simpan</button>
                 </div>
 
                 {
