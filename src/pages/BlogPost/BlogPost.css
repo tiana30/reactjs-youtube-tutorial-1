@@ -41,7 +41,10 @@ p.title {
     color: black;
 
 }
-
+.content p.title:hover {
+    cursor:pointer;
+    color: orangered;
+}
 p.desc {
     font-size: 14px;
     font-weight: 300;
@@ -63,6 +66,7 @@ p.desc {
 
 .content .remove:hover {
     cursor:pointer;
+    color: orangered;
 } 
 
 .form-add-post {
@@ -105,10 +109,12 @@ p.desc {
     color: #2196f3;
     font-weight: bold;
     margin-top: 30px;
+    
 }
 
 .btn-submit:hover{
     cursor:pointer;
+    color: orangered;
 }
 
 .content .update {
@@ -125,4 +131,5 @@ p.desc {
 
 .content .update:hover {
     cursor:pointer;
+    color: orangered;
 } 

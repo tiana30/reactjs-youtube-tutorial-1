@@ -5,6 +5,7 @@ import YoutubePage from '../Youtube/YoutubePage';
 import Product from '../Product/Product';
 import LifeCycleComp from '../LifeCycle/LifeCycleComp';
 import BlogPost from '../BlogPost/BlogPost';
+import DetailPost from '../BlogPost/DetailPost/DetailPost';
 
 class Home extends Component {
     state = {
@@ -38,6 +39,7 @@ class Home extends Component {
 
             <Route exact path="/" component={BlogPost}/>
             <Route path="/youtube" component={YoutubePage}/>
+            <Route exact path="/detail-post/:id" component={DetailPost}/>
             <Route path="/product" component={Product}/>
             <Route path="/lifecycle" component={LifeCycleComp}/> 
             </div> 

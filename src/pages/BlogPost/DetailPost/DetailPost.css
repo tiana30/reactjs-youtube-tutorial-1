@@ -1,0 +1,28 @@
+.detail{
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 16px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 4px;
+}
+
+.detail-title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-top: 0px;
+    color: black;
+
+}
+
+.detail-body {
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: none;
+    margin-top: 0px;
+    color: chocolate;
+
+}
