@@ -11,7 +11,8 @@ class BlogPost extends Component {
             id:1,
             title:'',
             body: ''
-        }
+        },
+        isUpdate: false
     }
 
     getPostApi = () => {
@@ -35,12 +36,35 @@ class BlogPost extends Component {
         })
     }
 
+    putDataToApi = () => {
+        Axios.put(`http://localhost:3004/posts/${this.state.formPost.id}`, this.state.formPost)
+        .then((result) => {
+            this.getPostApi();
+            this.setState({
+                isUpdate: false,
+                formPost: {
+                    userId: 1,
+                    id: '',
+                    title: '',
+                    body:''
+
+                }
+            })
+        }, (err) => {
+            console.log("error :", err)
+        })
+    }
+
     handleFormChange = (event) => {
         console.log('form change', event.target.value);
         let formPostNew ={...this.state.formPost}
         let timestamp = new Date().getTime();
-        formPostNew['id'] = timestamp; //id di isi dengan 
-        formPostNew[event.target.name] = event.target.value; //
+
+        if(!this.state.isUpdate){
+            formPostNew['id'] = timestamp; //id di isi dengan 
+       
+        }
+         formPostNew[event.target.name] = event.target.value; //
         this.setState({
             formPost: formPostNew
         }, () => {
@@ -59,7 +83,19 @@ class BlogPost extends Component {
     }
 
     handleSubmit = () => {
-        this.postDataToApi(); //memanggil fungsi
+        if(this.state.isUpdate){
+            this.putDataToApi();
+        }else{
+             this.postDataToApi(); //memanggil fungsi
+        }
+       
+    }
+
+    handleUpdate = (data) => {
+        this.setState({
+            formPost: data,
+            isUpdate: true
+        })
     }
 
     componentDidMount(){
@@ -85,26 +121,40 @@ class BlogPost extends Component {
    
     render(){
         return(
-            <Fragment>
-               <p className="section-header">Blog Post</p>
+            <Fragment> <p className="section-header">Blog Post</p>
+               <div className="all">
+              
                <div className="form-add-post">
                     <label htmlFor="title">Title</label>
-                    <input type="text" name="title" placeholder="add title" onChange={this.handleFormChange} />
+                    <input type="text" 
+                    name="title" 
+                    placeholder="add title" 
+                    value={this.state.formPost.title}
+                    onChange={this.handleFormChange} />
                     <label htmlFor="body">Blog Content</label>
-                    <textarea name="body" id="body" cols="30" placeholder="add content" rows="10" onChange={this.handleFormChange}></textarea>
+                    <textarea name="body" 
+                    id="body" 
+                    cols="30" 
+                    placeholder="add content" 
+                    rows="10" 
+                    value={this.state.formPost.body}
+                    onChange={this.handleFormChange}></textarea>
                     <button className="btn-submit" onClick = {this.handleSubmit}>Simpan</button>
                 </div>
-
+                <div className="post-container">
                 {
                     this.state.post.map(post => {
                         return  (
                         <Post key={post.id} 
                         data = {post} //title dan body sudah dibungkus dengan props bernama data
+                        OnUpdate = {this.handleUpdate}
                         OnRemove = {this.handleRemove}
                         />
                         )
                     })
                 } 
+                </div>
+               </div>
             </Fragment>
         )
     }

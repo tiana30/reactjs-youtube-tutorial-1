@@ -9,9 +9,13 @@ const Post = (props) => {
             <div className="content">
                 <p className="title">{props.data.title}</p>
                 <p className="desc">{props.data.body}</p>
+                 <button className="update"
+                onClick={ () => props.OnUpdate(props.data)}
+                >Update</button>
                 <button className="remove"
                 onClick={ () => props.OnRemove(props.data.id)}
                 >Delete</button>
+               
             </div>
         </div>
     )
