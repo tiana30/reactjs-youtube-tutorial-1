@@ -2,6 +2,7 @@ import React, { Component, Fragment} from 'react';
 import './BlogPost.css';
 import Post from './Post/Post';
 import Axios from 'axios';
+import { API } from '../../services';
 
 class BlogPost extends Component {
     state ={
@@ -16,12 +17,12 @@ class BlogPost extends Component {
     }
 
     getPostApi = () => {
-        Axios.get('http://localhost:3004/posts?_sort=id&_order=desc')
+        API.getNewsBlog()
         .then((result) => 
         {
            // console.log(result.data);
             this.setState({
-                post: result.data
+                post: result
             })
         })    
     }

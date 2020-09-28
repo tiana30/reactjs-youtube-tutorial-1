@@ -3,6 +3,12 @@
 }
 
 .post-container {
+    box-shadow: 0px 0px 10px;
+    width: 400px;
+    margin: auto;
+    height: fit-content;
+    padding: 20px 0 30px 60px;
+    border-radius: 4px;
     flex:1;
 }
 .post-wrapper {
@@ -70,9 +76,8 @@ p.desc {
 } 
 
 .form-add-post {
-    box-shadow: 0px 0px 16px;
+    box-shadow: 0px 0px 10px;
     width: 400px;
-    margin-left: 20px;
     height: fit-content;
     padding: 10px;
     margin-bottom: 50px;
