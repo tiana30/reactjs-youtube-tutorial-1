@@ -92,10 +92,8 @@ class BlogPost extends Component {
     }
 
     handleSubmit = () => {
-        let btnText;
         if(this.state.isUpdate){
             this.putDataToApi();
-            btnText="Edit";
 
         }else{
              this.postDataToApi(); //memanggil fungsi
@@ -155,7 +153,9 @@ class BlogPost extends Component {
                     rows="10" 
                     value={this.state.formPost.body}
                     onChange={this.handleFormChange}></textarea>
-                    <button className="btn-submit" onClick = {this.handleSubmit}>Simpan</button>
+                    <button className="btn-submit" onClick = {this.handleSubmit}>
+                    { this.state.isUpdate ? "Update": "Simpan"}
+                    </button>
                 </div>
                 <div className="post-container">
                 {

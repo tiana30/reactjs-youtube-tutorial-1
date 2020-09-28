@@ -4,22 +4,24 @@
 
 .post-container {
     box-shadow: 0px 0px 10px;
-    width: 400px;
-    margin: auto;
+    width: fit-content;
+    margin: auto 15px;
     height: fit-content;
-    padding: 20px 0 30px 60px;
+    padding: 20px 20px 30px 30px;
     border-radius: 4px;
     flex:1;
 }
 .post-wrapper {
     display: flex;
-    width: 400px;
-    height: 240px;
+    width: 450px;
+    height: fit-content;
     box-sizing: border-box;
     margin-left: 12px;
+    margin-bottom: 10px;
     padding: 1em;
     background-color: wheat;
-    border: 3px solid white;
+    border: 1px solid olive;
+    border-radius: 5px;
 }
 
 .img-thumb {
@@ -67,6 +69,7 @@ p.desc {
     border-radius: 4px;
     outline: none;
     padding: 10px 15px;
+    float: right;
 
 }
 
@@ -77,7 +80,7 @@ p.desc {
 
 .form-add-post {
     box-shadow: 0px 0px 10px;
-    width: 400px;
+    width: 450px;
     height: fit-content;
     padding: 10px;
     margin-bottom: 50px;
@@ -114,6 +117,7 @@ p.desc {
     color: #2196f3;
     font-weight: bold;
     margin-top: 30px;
+    float: right;
     
 }
 
@@ -130,7 +134,8 @@ p.desc {
     border-radius: 4px;
     outline: none;
     padding: 10px 15px;
-    margin-right: 5px;
+    margin-left: 5px;
+    float: right;
 
 }
 
