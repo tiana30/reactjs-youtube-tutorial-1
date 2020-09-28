@@ -5,7 +5,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 // import StatefullComp from './class-comp/StatefullComp';
 // import HelloComp from './function-comp/HelloComp';
-import {Home} from './pages/Home/Home';
+import Home from './pages/Home/Home';
 // import {createStore} from 'redux';
 // import {Provider} from 'react-redux';
 // import  AppReducer from './redux/globalReducer';

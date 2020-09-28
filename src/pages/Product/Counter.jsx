@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 //import {connect} from 'react-redux'; //1. lakukan import dahulu
-import {AppContext} from '../../pages/Home/Home'; //1. import
+import {GlobalConsumer} from '../../context/context'; //1. import
 class Counter extends Component {
 render(){
 //     return(
@@ -10,19 +10,13 @@ render(){
 //         <button className="plus" onClick={this.props.handlePlus}>+</button> {/*7. mengatur fungsi handlePlus dari props connect */}
 //         </div>
 //      )
-    //2. buat consumer (children) dan valuenya di dapat dari provider
-    return(
-        <AppContext.Consumer>
-        {(value) => {
+   
             return(
             <div className="counter">
-            <button className="minus" onClick={() => value.dispatch({type:"MINUS_ORDER"})}>-</button> {/*6. mengatur fungsi handleMinus dari props connect*/}
-            <input type="text" value={value.state.totalOrder} />  {/*5. nilai order */}
-            <button className="plus" onClick={() => value.dispatch({type:"PLUS_ORDER"})}>+</button> {/*7. mengatur fungsi handlePlus dari props connect */}
-            </div>
-    )
-        }}
-        </AppContext.Consumer>
+            {/* <button className="minus" onClick={() => value.dispatch({type:"MINUS_ORDER"})}>-</button> */} {/*6. mengatur fungsi handleMinus dari props connect*/}
+            {/*<input type="text" value={value.state.totalOrder} />  */}{/*5. nilai order */}
+            {/* <button className="plus" onClick={() => value.dispatch({type:"PLUS_ORDER"})}>+</button> 7. mengatur fungsi handlePlus dari props connect */}
+            </div> 
     )
     
 }
