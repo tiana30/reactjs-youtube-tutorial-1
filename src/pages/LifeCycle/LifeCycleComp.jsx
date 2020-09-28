@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './LifeCycle.css';
 //import {connect} from 'react-redux';
+import {AppContext} from '../../pages/Home/Home';
 
 class LifeCycleComp extends Component {
     constructor (props) {
@@ -58,14 +59,30 @@ class LifeCycleComp extends Component {
     }
 
     render(){
-        return(
-        <>
-            <p className="section">LifeCycle Page</p>
+        // return(
+        // <>
+        //     <p className="section">LifeCycle Page</p>
                
-            <button className="btn" onClick={this.handleChange}> Component Button {this.state.count} </button>
-            {/* <p className="section">Total Order : {this.props.order}</p> */}
+        //     <button className="btn" onClick={this.handleChange}> Component Button {this.state.count} </button>
+        //     {/* <p className="section">Total Order : {this.props.order}</p> */}
          
-        </>)
+        // </>)
+
+        return(
+            <AppContext.Consumer>
+            {
+                (value) => {
+                return(
+                    <>
+                    <p className="section">LifeCycle Page</p>    
+                    <button className="btn" onClick={this.handleChange}> Component Button {this.state.count} </button>
+                    <p className="section">Total Order : {value.state.totalOrder} </p>
+                    </>
+                )
+                }
+            }
+            </AppContext.Consumer>
+        )
     }
 }
 
