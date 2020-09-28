@@ -28,10 +28,18 @@ class BlogPost extends Component {
     }
 
     postDataToApi = () => {
-        Axios.post(`http://localhost:3004/posts/`, this.state.formPost)
+        API.postNewsBlog(this.state.formPost)
         .then((result) =>{
             console.log(result);
             this.getPostApi();
+            this.setState({
+                formBlogPost: {
+                    userId: 1,
+                    id: '',
+                    title: '',
+                    body: ''
+                }
+            })
         }, (err) => {
             console.log("error : ", err)
         })
