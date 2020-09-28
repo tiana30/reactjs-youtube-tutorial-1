@@ -2,7 +2,6 @@ import React, {Component , Fragment} from 'react';
 import CardProduct from './CardProduct';
 import './Product.css';
 
-
 class Product extends Component {
     state = {
         order: 4,
