@@ -5,7 +5,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 // import StatefullComp from './class-comp/StatefullComp';
 // import HelloComp from './function-comp/HelloComp';
-import Home from './class-comp/Home/Home';
+import Home from './pages/Home/Home';
 
 
 ReactDOM.render(

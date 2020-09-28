@@ -1,5 +1,4 @@
 import React from 'react';
-import './YoutubeComp.css';
 
 
 const YoutubeComp = (props) => {
