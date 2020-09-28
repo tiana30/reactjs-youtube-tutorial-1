@@ -6,18 +6,19 @@ import * as serviceWorker from './serviceWorker';
 // import StatefullComp from './class-comp/StatefullComp';
 // import HelloComp from './function-comp/HelloComp';
 import Home from './pages/Home/Home';
-import {createStore} from 'redux';
-import {Provider} from 'react-redux';
-import  AppReducer from './redux/globalReducer';
+// import {createStore} from 'redux';
+// import {Provider} from 'react-redux';
+// import  AppReducer from './redux/globalReducer';
 
-//Store
-const store = createStore(AppReducer);
-console.log(store.getState());
+// //Store
+// const store = createStore(AppReducer);
+// console.log(store.getState());
 
 ReactDOM.render(
-   <Provider store = {store}>
+  //  <Provider store = {store}>
      <Home />
-   </Provider>,
+   //</Provider>
+   ,
   document.getElementById('root')
 );
 
