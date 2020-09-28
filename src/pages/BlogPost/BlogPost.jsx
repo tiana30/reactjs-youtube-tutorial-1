@@ -46,7 +46,8 @@ class BlogPost extends Component {
     }
 
     putDataToApi = () => {
-        Axios.put(`http://localhost:3004/posts/${this.state.formPost.id}`, this.state.formPost)
+        console.log(this.state.formPost, this.state.formPost.id)
+        API.updateNewsBlog(this.state.formPost, this.state.formPost.id)
         .then((result) => {
             this.getPostApi();
             this.setState({
@@ -92,8 +93,11 @@ class BlogPost extends Component {
     }
 
     handleSubmit = () => {
+        let btnText;
         if(this.state.isUpdate){
             this.putDataToApi();
+            btnText="Edit";
+
         }else{
              this.postDataToApi(); //memanggil fungsi
         }
