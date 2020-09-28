@@ -10,7 +10,7 @@ class CardProduct extends Component {
             </div>
             <p className="product-title">Daging ayam Berbumbu</p>
             <p className="product-price">Rp 410,000</p>
-            <Counter onCounterChange = {(value) => this.props.onCounterChange(value)}/>
+            <Counter/>
              </div>
 
         )
