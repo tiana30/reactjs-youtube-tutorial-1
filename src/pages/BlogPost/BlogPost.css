@@ -1,13 +1,6 @@
 .all {
     display: flex;
 }
-.section-header {
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: capitalize;
-    margin-top: 0px;
-    color: black;
-}
 
 .post-container {
     flex:1;

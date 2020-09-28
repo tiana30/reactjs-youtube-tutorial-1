@@ -58,8 +58,11 @@ class LifeCycleComp extends Component {
 
     render(){
         return(
+        <>
+            <p className="section">LifeCycle Page</p>
+               
             <button className="btn" onClick={this.handleChange}> Component Button {this.state.count} </button>
-        )
+        </>)
     }
 }
 

@@ -17,6 +17,8 @@ class Product extends Component {
     render(){
         return(
             <Fragment>
+            <p className="section"> Product Page</p>
+              
             <div className="header">
             <div className="logo">
                 <img alt="logo" src="https://www.etanee.id/homescreenNew/android-icon-192x192.png"></img>

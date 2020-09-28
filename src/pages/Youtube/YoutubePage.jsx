@@ -6,6 +6,8 @@ class YoutubePage extends Component {
     render(){
         return(
             <>
+            <p className="section">Youtube Page</p>
+              
             <YoutubeComp />
                 <YoutubeComp time="7.12" title="ABCDEFGHIJK" desc="Mau Apa Aja" />
                 <YoutubeComp time="10.12" title="LMNOPQRSTUV" desc="Mau Apa Aja" />

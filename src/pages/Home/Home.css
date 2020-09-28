@@ -15,3 +15,25 @@ h2{
 hr{
     border:  3px solid olive;
 }
+.navigation {
+    background-color: darkslategray;
+    padding: 30px;
+}
+
+.navigation a {
+    padding: 10px 40px;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 4px;
+}
+p.section {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: auto ;
+    padding: 20px;
+    font-weight: bold;
+    color: darkslategrey;
+}
