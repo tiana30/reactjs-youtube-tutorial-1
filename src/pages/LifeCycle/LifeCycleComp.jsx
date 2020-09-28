@@ -72,7 +72,7 @@ class LifeCycleComp extends Component {
                     <>
                     <p className="section">LifeCycle Page</p>    
                     <button className="btn" onClick={this.handleChange}> Component Button {this.state.count} </button>
-                    {/* <p className="section">Total Order : {value.state.totalOrder} </p> */}
+                    <p className="section">Total Order : {this.props.state.totalOrder} </p>
                     </> 
         )
     }
@@ -85,4 +85,4 @@ class LifeCycleComp extends Component {
 // }
 
 // export default connect(StateToProps)(LifeCycleComp);
-export default LifeCycleComp;
+export default GlobalConsumer(LifeCycleComp);

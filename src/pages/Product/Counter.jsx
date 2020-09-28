@@ -13,9 +13,9 @@ render(){
    
             return(
             <div className="counter">
-            {/* <button className="minus" onClick={() => value.dispatch({type:"MINUS_ORDER"})}>-</button> */} {/*6. mengatur fungsi handleMinus dari props connect*/}
-            {/*<input type="text" value={value.state.totalOrder} />  */}{/*5. nilai order */}
-            {/* <button className="plus" onClick={() => value.dispatch({type:"PLUS_ORDER"})}>+</button> 7. mengatur fungsi handlePlus dari props connect */}
+            <button className="minus" onClick={() => this.props.dispatch({type:"MINUS_ORDER"})}>-</button> {/*6. mengatur fungsi handleMinus dari props connect*/}
+            <input type="text" value={this.props.state.totalOrder} />  {/*5. nilai order */}
+            <button className="plus" onClick={() => this.props.dispatch({type:"PLUS_ORDER"})}>+</button> {/* 7. mengatur fungsi handlePlus dari props connect */}
             </div> 
     )
     
@@ -36,4 +36,4 @@ render(){
 // }
 
 //export default connect(StateProps, DispatchProps)(Counter); //2. inisialisasi connect dengan state dan dispatch dengan nama custom
-export default Counter; //3. kembalikan seperti semula
+export default GlobalConsumer(Counter); //3. kembalikan seperti semula

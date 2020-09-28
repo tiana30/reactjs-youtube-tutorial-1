@@ -48,3 +48,24 @@ export const GlobalProvider = (Children) => {
         }
     )
 }
+
+//Consumer
+const Consumer = AppContext.Consumer;
+export const GlobalConsumer = (Children) => {
+    return(
+        class ParentConsumer extends Component {
+            render(){
+                return (<Consumer>
+        {
+            value => {
+                return (
+                     <Children {...this.props} {...value} />
+                )
+            }
+        }
+    
+        </Consumer>)
+            }
+        }
+    )
+}
